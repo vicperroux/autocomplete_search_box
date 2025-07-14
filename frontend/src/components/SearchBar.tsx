@@ -127,7 +127,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ trieInitialized }) => {
             >
               <div className="result-name">{suggestion.name}</div>
               <div className="result-rating">
-                Rating count: {suggestion.rating_count} | Score: {suggestion.score.toFixed(2)}
+                Rating count: {suggestion.rating_count}
               </div>
             </div>
           ))}
