@@ -1,24 +1,13 @@
-# Read data
-def read_data(data_path):
-    with open(data_path, "r") as file:
-        data = file.read()
-    return data
+"""
+Trie data structure for efficient prefix-based search
+"""
 
-
-# Prepare data
-def prepare_data(data):
-    wiki_titles = data.split("\n")
-    return wiki_titles
-
-
-# Autocomplete class using Trie data structure
 class TrieNode:
     def __init__(self):
         self.children = {}  # Use dictionary instead of fixed array
         self.isLeaf = False
 
 
-# Autocomplete class using Trie data structure
 class Trie:
     def __init__(self):
         self.root = TrieNode()
@@ -89,39 +78,3 @@ class Trie:
         # Recursively check all children
         for char in node.children:
             self._collect_words(node.children[char], current_word + char, words)
-
-
-# Search prefix gives the words with a given prefix
-list_words = ["prince of oman", "princess", "princeps"]
-
-#
-
-"""
-# 3 possibles directions for the ranking of results / relevant results
-# - most popular pages
-# - most visited types of pages for a given user
-# - coming from a given page -> most frequent transition for a user
-"""
-
-
-def main():
-    pass
-
-
-if __name__ == "__main__":
-    data = read_data("wiki_titles.txt")
-    prepared_data = prepare_data(data)
-
-    # Initialize Trie and insert wiki titles
-    trie = Trie()
-    for title in prepared_data:
-        trie.insert(
-            title.lower()
-        )  # Insert titles in lowercase for case-insensitive search
-
-    # Example usage
-    prefix = "prince"
-    if trie.is_prefix(prefix):
-        print(f"Words starting with '{prefix}': {trie.search_prefix(prefix)}")
-    else:
-        print(f"No words found with prefix '{prefix}'")
