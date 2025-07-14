@@ -1,2 +1,22 @@
 # Ignore virtual environment
 data/detailed_google_maps_places_data.csv
+
+# Node modules
+node_modules/
+frontend/node_modules/
+
+# Build outputs
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+.env.development
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
