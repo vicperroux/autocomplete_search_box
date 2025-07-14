@@ -8,7 +8,7 @@ const App: React.FC = () => {
 
   return (
     <div className="app">
-      <h1>Restaurant Autocomplete</h1>
+      <h1>Autocomplete search box</h1>
       
       <div className="tabs">
         <div 

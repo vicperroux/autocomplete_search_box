@@ -92,7 +92,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ trieInitialized }) => {
 
   return (
     <div className="container">
-      <h2>Search Restaurants</h2>
+      <h2>Search Restaurants in New York City</h2>
       <div className="search-container">
         <input
           ref={searchInputRef}
