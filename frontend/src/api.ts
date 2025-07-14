@@ -1,20 +1,22 @@
-import axios from 'axios';
-import { 
-  RestaurantListResponse, 
-  AutocompleteResponse, 
-  ApiResponse 
-} from './types';
+import axios from "axios";
+import {
+  RestaurantListResponse,
+  AutocompleteResponse,
+  ApiResponse,
+} from "./types";
 
-const API_BASE_URL = 'http://localhost:8001/api';
+const API_BASE_URL = "http://localhost:8000/api";
 
 // Initialize the trie data structure
 export const initializeTrie = async (): Promise<ApiResponse> => {
   try {
-    const response = await axios.post<ApiResponse>(`${API_BASE_URL}/initialize`);
+    const response = await axios.post<ApiResponse>(
+      `${API_BASE_URL}/initialize`
+    );
     return response.data;
   } catch (error) {
-    console.error('Error initializing trie:', error);
-    return { status: 'error', message: 'Failed to initialize data' };
+    console.error("Error initializing trie:", error);
+    return { status: "error", message: "Failed to initialize data" };
   }
 };
 
@@ -25,16 +27,18 @@ export const getAutocompleteSuggestions = async (
 ): Promise<AutocompleteResponse> => {
   try {
     const response = await axios.get<AutocompleteResponse>(
-      `${API_BASE_URL}/autocomplete?prefix=${encodeURIComponent(prefix)}&limit=${limit}`
+      `${API_BASE_URL}/autocomplete?prefix=${encodeURIComponent(
+        prefix
+      )}&limit=${limit}`
     );
     return response.data;
   } catch (error) {
-    console.error('Error fetching autocomplete suggestions:', error);
+    console.error("Error fetching autocomplete suggestions:", error);
     return {
       query: prefix,
       suggestions: [],
       total_count: 0,
-      status: 'error'
+      status: "error",
     };
   }
 };
@@ -50,8 +54,8 @@ export const getRestaurants = async (
     );
     return response.data;
   } catch (error) {
-    console.error('Error fetching restaurants:', error);
-    return { restaurants: [], total: 0, status: 'error' };
+    console.error("Error fetching restaurants:", error);
+    return { restaurants: [], total: 0, status: "error" };
   }
 };
 
@@ -67,7 +71,7 @@ export const addRestaurant = async (
     );
     return response.data;
   } catch (error) {
-    console.error('Error adding restaurant:', error);
-    return { status: 'error', message: 'Failed to add restaurant' };
+    console.error("Error adding restaurant:", error);
+    return { status: "error", message: "Failed to add restaurant" };
   }
 };

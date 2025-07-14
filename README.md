@@ -2,6 +2,12 @@
 
 A full-stack application that provides fast and efficient autocomplete suggestions for any list of names (New York restaurants in this case) using a Trie data structure.
 
+<p align="center">
+  <img src="images/autocomplete-demo.png" alt="Restaurant Autocomplete Demo" width="700">
+  <br>
+  <em>Restaurant search autocomplete in action: Showing search results for "nan xian"</em>
+</p>
+
 ## Project Overview
 
 This application demonstrates an efficient approach to implementing autocomplete functionality:
