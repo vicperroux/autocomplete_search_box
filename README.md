@@ -3,9 +3,9 @@
 A simple web app that provides fast and efficient autocomplete suggestions for any list of names (New York restaurants in this case) using a Trie data structure.
 
 <p align="center">
-  <img src="images/autocomplete-demo.png" alt="Restaurant Autocomplete Demo" width="700">
+  <img src="images/autocomplete-demo.png" alt="Autocomplete search box Demo" width="700">
   <br>
-  <em>Restaurant search autocomplete in action: Showing search results for "cha"</em>
+  <em>Autocomplete search box in action: Showing search results for "cha"</em>
 </p>
 
 ## Project Overview
